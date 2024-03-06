@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/public/Footer';
 
 const Projet = (props) => {
-    const domain = 'http://localhost:4000/'
+    const domain = 'https://projetpeintre.onrender.com/'
     let navigate = useNavigate()
      const [data ,setData]= useState([])
     useEffect (()=>{
