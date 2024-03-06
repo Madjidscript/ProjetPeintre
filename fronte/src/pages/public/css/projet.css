@@ -1,0 +1,38 @@
+body{
+    padding-top:70px;
+}
+.parent{
+    margin-top: 60px;
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.image {
+    width: 350px;
+    height: 300px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: blue;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+}
+
+.image:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+ @media (max-width: 400px) {
+     .image {
+      width:300px;
+    }
+ } 

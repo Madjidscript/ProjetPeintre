@@ -1,0 +1,53 @@
+body {
+}
+.champs{
+    padding: 20px 0px ;
+    background-color: none;
+}
+sup{
+    font-size: 20px;
+    font-weight: bold;
+    color:#fd5521 ;
+}
+.bouton{
+    background-color: #fd5521;
+    border-color: #fd5521;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+.bouton:hover{
+    background-color:#fd5521;
+    border: #fd5521;
+}
+.champs{
+    border: none; 
+    border-radius: 0px;
+    border-bottom: 1px solid black; 
+    background-color: transparent; 
+    padding: 5px; 
+    outline: none; 
+  }
+  
+  .champs:focus {
+    border-bottom: 2px solid black; 
+  }
+  .champ{
+    border: 1px solid black;
+  }
+  .champ:focus{
+    border: 2px solid black;
+  }
+  .images{
+    height:60vh;
+    width: 40vw;
+  }
+  @media (max-width: 430.98px) {
+    .images {
+      display: none;
+    }
+    .pp{
+        display: none;
+    }
+    
+  }

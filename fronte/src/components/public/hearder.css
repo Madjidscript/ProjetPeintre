@@ -1,0 +1,39 @@
+#onglet {
+  background-color: #444444;
+  border: 1px solid #fd5521;
+  padding: 15px;
+}
+#box {
+  /* background-color: green; */
+ 
+  width: auto;
+}
+#titre {
+  background-color: #444444;
+  border: 1px solid #fd5521;
+  padding: 17px;
+  color: white;
+  /* width: 10%;
+    height: 100%; */
+}
+.lien {
+  color: white;
+  margin-left: 45px;
+}
+.lien:hover {
+  background-color: white;
+  height: 50px;
+}
+#num {
+  color: white;
+  background-color: #fd5521;
+  padding: 21px;
+}
+.success{
+  background-color: aqua;
+  padding-top: 30px;
+  display: inline;
+  height: 100vh;
+ 
+}
+

@@ -1,0 +1,21 @@
+body {
+}
+.champ{
+    padding: 20px 0px ;
+}
+sup{
+    font-size: 20px;
+    font-weight: bold;
+    color:#fd5521 ;
+}
+.bouton{
+    background-color: #fd5521;
+    border-color: #fd5521;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+.bouton:hover{
+    background-color:#fd5521;
+    border: #fd5521;
+}

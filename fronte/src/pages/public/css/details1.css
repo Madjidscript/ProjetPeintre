@@ -1,0 +1,10 @@
+body{
+    /* background-color: aqua; */
+}
+.images img {
+    width: 50vw;
+    height: 80vh;
+}
+.text1{
+    margin-top: 50px;
+}
