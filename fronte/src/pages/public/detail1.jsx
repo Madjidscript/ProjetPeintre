@@ -12,7 +12,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 const Detail1 = (props) => {
-    const domain = 'http://localhost:4000/'
+    const domain ='https://projetpeintre.onrender.com/'
    const {id} = useParams()
    console.log("mon id ",id);
    const [datas,setDatas]=useState([])
