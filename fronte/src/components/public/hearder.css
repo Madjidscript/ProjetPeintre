@@ -19,6 +19,7 @@
 .lien {
   color: white;
   margin-left: 45px;
+  width: 80px;
 }
 .lien:hover {
   background-color: white;

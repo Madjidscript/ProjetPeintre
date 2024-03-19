@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const session = require('express-session')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -19,6 +19,14 @@ app.use('/uploads',express.static('./uploads'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cors());
+
+
+//configuration de ma session
+app.use(session({
+  secret: 'peintre', // Une chaîne secrète pour signer les cookies de session
+  resave: false, // Ne pas enregistrer la session à chaque requête
+  saveUninitialized: true, // Enregistrer une session vide pour les nouveaux utilisateurs
+}));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

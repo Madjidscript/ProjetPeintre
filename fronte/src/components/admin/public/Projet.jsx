@@ -6,8 +6,11 @@ import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
 // import {api} from "../../../services/apiService";
 import axios from "../../../services/collerService";
+import { useNavigate } from 'react-router-dom';
+import Hearder from '../../public/Hearder';
 
 const Projet = (props) => {
+  const navigate= useNavigate()
    
     // const envoi = (e)=>{
     //     e.preventDefault();
@@ -23,6 +26,8 @@ const Projet = (props) => {
         
        
     // }
+   //const local= localStorage.getItem("Mydata")
+   //console.log("mon local",local);
     const [nom,setNon]=useState('')
     const [description,setDescription]=useState('')
     const [image,setImage]=useState('')
@@ -44,6 +49,7 @@ const Projet = (props) => {
             axios.post('/admin/projet',formData)
             .then(response => {
               console.log('Réponse de l\'API :', response);
+             
             })
             .catch(error => {
               console.error('Erreur lors de la requête :', error);
@@ -53,7 +59,7 @@ const Projet = (props) => {
 
     return (
     <>
-   
+   <Hearder/>
   
   <Form onSubmit={envoi} enctype="multipart/form-data" >  
     <Row>
