@@ -39,7 +39,7 @@ const Contact = (props) => {
           message:message
       };
      
-      console.log("mon objet",data);
+      console.log("mon obje",data);
       
     
         axios.post('/contact', data)
