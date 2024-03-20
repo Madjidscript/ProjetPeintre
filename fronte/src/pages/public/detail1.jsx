@@ -19,7 +19,7 @@ const Detail1 = (props) => {
     useEffect (()=>{
         axios.get(`/detail/${id}`)
         .then(res => {
-          console.log('Réponse de l\'API :', res.data.recup);
+          console.log('Réponse de l\'API :', reses.data.recup);
          setDatas(res.data.recup)
         })
         .catch(error => {

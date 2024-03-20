@@ -31,7 +31,7 @@ const Postuler = (props) => {
     let selectElement = document.getElementById("pp");
     let selectedIndex = selectElement.selectedIndex
     let selectedText = selectElement.options[selectedIndex].textContent;
-    console.log("ma valeur choisis",selectedText);
+    console.log("ma valeur choisi",selectedText);
 
     e.preventDefault();
     let data = {
