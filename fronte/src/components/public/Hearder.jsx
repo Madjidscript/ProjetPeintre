@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Hearder() {
-  const [nom, setNom] = useState("profil");
+  //const [nom, setNom] = useState("");
   const connecter = accountService.local();
   const navigate = useNavigate();
   const deconnexion = () => {
@@ -16,14 +16,14 @@ function Hearder() {
     navigate("/auth/connexion");
   };
 
-  useEffect(() => {
-    const local = JSON.parse(localStorage.getItem("Mydata"));
-    console.log("aslam hooo", local.nom);
-    if (local) {
-      const name = nom
-      setNom(name);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const local = JSON.parse(localStorage.getItem("Mydata"));
+  //   console.log("aslam hooo", local.nom);
+  //   if (local) {
+  //     const name = nom
+  //     setNom(name);
+  //   }
+  // }, []);
  
 
   return (
@@ -73,9 +73,7 @@ function Hearder() {
                 <Nav.Link className="lien" href="modif">
                   editer{" "}
                 </Nav.Link>
-                <Nav.Link className="lien" href="#">
-                  {nom}
-                </Nav.Link>
+                
                 <Button
                   variant="primary"
                   onClick={deconnexion}
