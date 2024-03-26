@@ -20,9 +20,11 @@ function Hearder() {
     const local = JSON.parse(localStorage.getItem("Mydata"));
     console.log("aslam hooo", local.nom);
     if (local) {
-      setNom(local.nom);
+      const name = nom
+      setNom(name);
     }
   }, []);
+ 
 
   return (
     <Navbar expand="lg" className="success">
