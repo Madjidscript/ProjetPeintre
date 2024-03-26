@@ -2,6 +2,9 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Error from '../../../utils/Error';
 import Projet from './Projet';
+import InscriptionUser from './inscriUser';
+import Utulisateur from './utilisateur';
+import Modif from './modif';
 
 
 const AdminRouter = (props) => {
@@ -10,6 +13,9 @@ const AdminRouter = (props) => {
         <Routes>
             <Route index element={<Projet/>}/>
             <Route path='projet' element={<Projet/>}/>
+            <Route path='inscriUser' element={<InscriptionUser/>}/>
+            <Route path='user' element={<Utulisateur/>}/>
+            <Route path='modif/:id' element={<Modif/>}/>
             <Route path='*' element={<Error/>}/>
         </Routes>
         </>

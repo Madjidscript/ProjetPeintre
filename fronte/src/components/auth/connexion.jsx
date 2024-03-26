@@ -19,6 +19,9 @@ const Connexion = (props) => {
       navigate("/admin/projet");
     }
   }, []); 
+  const inscrit =()=>{
+    return navigate("/auth/inscription")
+  }
  
   
  
@@ -120,7 +123,15 @@ const Connexion = (props) => {
               <Button className="bouton" type="submit">
                 valider
               </Button>
+              <span>
+              <Button className="bouton" onClick={inscrit} style={{marginLeft:"5px"}}>
+                inscription
+              </Button>
+            </span>
             </Col>
+          
+             
+           
           </Row>
         </Form>
       </Container>

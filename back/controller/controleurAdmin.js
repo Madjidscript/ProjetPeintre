@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 const otherProjet = require('../other/projet')
 const {request,response}=require('express');
 const otherUser = require("../other/user");
+const { mailer2 } = require("../middlewares/mailer2");
 const controlerAdmin = class {
     static ProjetPost= async (req=request,res=response)=>{
     
@@ -29,6 +30,8 @@ const controlerAdmin = class {
       console.log('mon body',req.body);
       const password = req.body.password
       const mail = req.body.email
+      const images = req.file.path
+      const fonctions = req.body.fonction
       let message = ""
       const email = await otherUser.utilisateurParEmail(mail)
       if (email) {
@@ -39,7 +42,9 @@ const controlerAdmin = class {
         let data={
             nom:req.body.nom,
             email:mail,
-            password:hashpass
+            password:hashpass,
+            fonction:fonctions,
+            image:images
         }
         const insertion =await otherUser.inscription(data)
         if (insertion) {
@@ -77,6 +82,78 @@ const controlerAdmin = class {
         }
       }
     }
+
+    static toutUser = async(req=request,res=response)=>{
+      let message=""
+    const recup = await otherUser.afficheTout()
+    if (recup) {
+      message='recuperation bien effectuer'
+      console.log("marecuperation",recup);
+      res.json({recup,message})
+    }else{
+      message='recuperation echouer'
+      console.log("mon message",message);
+      res.json({message})
+    }
+  console.log('ma recuperation hooo');
+  }
+
+
+  static getUserId= async(req=request,res=response)=>{
+    const id = req.params.id
+    console.log("mon id des",id);
+      let message=""
+    const recup = await otherUser.utilisarteuParID(id)
+    if (recup) {
+      message='recuperation bien effectuer'
+      console.log("marecuperation",recup);
+      res.json({recup,message})
+    }else{
+      message='recuperation echouer'
+      console.log("mon message",message);
+      res.json({message})
+    }
+  console.log('ma recuperation hooo');
+  }
+
+
+
+
+  static modif = async(req=request,res=response)=>{
+    let message=""
+    console.log("mon post hooo",req.body);
+    const ids = req.params.id
+    const password = req.body.password
+    const mail = req.body.email
+    const images = req.body.image
+    const fonctions = req.body.fonction
+    const hashpass = await bcrypt.hash(password,10)
+      let data={
+          nom:req.body.nom,
+          email:mail,
+          password:hashpass,
+          fonction:fonctions,
+          image:images
+      }
+    const Modif= await otherUser.update(ids,data)
+
+    if (Modif) {
+      console.log("mon Modifion",Modif,Modif.nom);
+      message="Modifion valider"
+       mailer2(Modif.email,Modif.nom,req.body.password,Modif.fonction)
+    
+      let verifEMAIl = mailer2
+      if (verifEMAIl) {
+        message="insertion valider"
+        res.json(message)
+      }
+    
+  }else{
+      console.log('une erreur survenue');
+      message="insertion echouer"
+      res.json(message)
+  }
+  }
 
 
 

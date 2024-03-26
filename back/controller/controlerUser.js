@@ -1,6 +1,9 @@
 
-
+const path = require("path/win32");
+const bcrypt = require('bcrypt')
 const { mailer } = require('../middlewares/mailer')
+const { mailer1 } = require('../middlewares/mailer1')
+const { mailer2 } = require('../middlewares/mailer2')
 const otherContact = require('../other/contact')
 const otherPostuler = require('../other/postuler')
 const otherProjet = require('../other/projet')
@@ -26,6 +29,7 @@ const controlerUser = class {
 
     static getDetail= async(req=request,res=response)=>{
       const id = req.params.id
+      console.log("mon id des",id);
         let message=""
       const recup = await otherProjet.utilisarteuParID(id)
       if (recup) {
@@ -55,11 +59,14 @@ const controlerUser = class {
 
       if (Insert) {
         console.log("mon insertion",Insert);
-       
-        
+       console.log('mon email',Insert[0].email,"mon nom",Insert[0].nom,"mon poste",Insert[0].poste);
+        mailer1(Insert[0].email,Insert[0].nom,Insert[0].poste)
+          
+        let verifmail = mailer1
+        if (verifmail) {
           message="insertion valider"
           res.json(message)
-        
+        }
        
     }else{
         console.log('une erreur survenue');
@@ -67,6 +74,7 @@ const controlerUser = class {
         res.json(message)
     }
     }
+
     static contact = async(req=request,res=response)=>{
       let message=""
       console.log("mon post hooo",req.body.nom);
@@ -94,6 +102,7 @@ const controlerUser = class {
         res.json(message)
     }
     }
+    
     // static mail = async(req=request,res=response)=>{
     //   const mail = "13159596youssef@gmail.com"
     //     mailer(mail)

@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 require('dotenv').config()
 
-exports.mailer = (email,nom)=>{
+exports.mailer1 = (email,nom,poste)=>{
     console.log('emm',email,"nom",nom );
   return new Promise((resolve,reject)=>{
   let transporter = nodemailer.createTransport({
@@ -17,18 +17,13 @@ exports.mailer = (email,nom)=>{
       subject: "Connexion", // Subject line
       text: "Les coordonées de connexion", 
       html: `<p>
-      Objet: Réception de votre message
+      Nous vous remercions d'avoir postulé pour ${poste} chez <strong>Md service <strong/>. Nous avons bien reçu votre demande d'emploi et nous vous en remercions.
 
-Cher/Chère <strong>${nom}<strong/>,
+Votre candidature a retenu notre attention et nous sommes actuellement en train de l'examiner attentivement. Nous souhaitons vous informer que notre service de communication prendra contact avec vous dans les plus brefs délais pour organiser un entretien.
 
-Nous vous remercions d'avoir pris le temps de nous contacter. Nous avons bien reçu votre message et nous tenons à vous informer que nous accordons une grande importance à chaque retour que nous recevons de nos utilisateurs.
+Nous vous encourageons à rester disponible dans les jours à venir pour toute communication de notre part. Nous apprécions votre intérêt pour rejoindre notre équipe et nous sommes impatients de discuter avec vous de votre expérience et de vos qualifications.
 
-Notre équipe de support client examinera votre message attentivement et fera de son mieux pour répondre à votre préoccupation dans les plus brefs délais. Votre satisfaction est notre priorité absolue, et nous sommes là pour vous aider.
-
-N'hésitez pas à nous contacter à nouveau si vous avez d'autres questions ou préoccupations. Nous sommes là pour vous accompagner.
-
-Cordialement,
-<strong>Md service <strong/>
+Si vous avez des questions ou si vous souhaitez fournir des informations supplémentaires, n'hésitez pas à nous contacter à l'adresse abdoul.latoundji@uvci.edu.ci ou par téléphone au 01 53 53 50 65.
 </p> 
                   `  
     };
@@ -45,3 +40,4 @@ Cordialement,
 }); 
 })
 }
+

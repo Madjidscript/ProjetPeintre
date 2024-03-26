@@ -3,20 +3,13 @@ import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
-import React, { useEffect,useState } from "react";
-import axios from "../../services/collerService";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "../../../services/collerService";
+import Hearder from '../../public/Hearder';
+//import { useNavigate } from "react-router-dom";
 
-const Inscription = (props) => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    const local = localStorage.getItem("Mydata");
-    console.log("monlocal des",local)
-    if (local) {
-      console.log("mon local", local);
-      navigate("/admin/projet");
-    }
-  }, []); 
+const InscriptionUser = (props) => {
+  //const navigate = useNavigate();
 
   const [password, setPassword] = useState("");
   const [nom, setNom] = useState("");
@@ -37,6 +30,7 @@ const Inscription = (props) => {
     formdata.append("password",password)
     formdata.append("fonction",fonction)
     formdata.append("image",image)
+
     e.preventDefault();
     // let data = {
     //   nom: nom,
@@ -53,7 +47,8 @@ const Inscription = (props) => {
 
         setTimeout(() => {
           console.log("Fonction exécutée après 3 secondes");
-          navigate("/admin/connexion");
+          //navigate("/auth/connexion");
+          window.location.reload()
         }, 3000);
       })
       .catch((error) => {
@@ -62,6 +57,7 @@ const Inscription = (props) => {
   };
   return (
     <div>
+        <Hearder/>
       <Container style={{ marginTop: "40px" }}>
         <Form onSubmit={envois}>
           <Row style={{ padding: "5px 20px", marginBottom: "25px" }}>
@@ -143,4 +139,4 @@ const Inscription = (props) => {
   );
 };
 
-export default Inscription;
+export default InscriptionUser;

@@ -1,0 +1,71 @@
+.box{
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards{
+    width: auto;
+    height:auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+.cards .hearder{
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  .rond{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: red;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  /* Style pour les actions */
+  .actions img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  .btn{
+    background-color: #fd5521;
+    border-radius: 2px;
+    outline: none;
+    color: white;
+    margin-right: 4px;
+  }
+  .btn:hover{
+    background-color: #fd5521;
+  }
+  .recherches {
+    padding: 6px 12px; /* Marge intérieure */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+    width: 200px; /* Largeur du champ de recherche */
+    box-shadow: none; /* Pas d'ombre */
+  }
+  
+  /* Style lorsque le champ de recherche est en focus */
+  .recherches:focus {
+    outline: none; /* Pas de contour */
+    border-color: #007bff; /* Bordure bleue lorsque le champ est en focus */
+  }
