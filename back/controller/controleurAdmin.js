@@ -70,7 +70,7 @@ const controlerAdmin = class {
         if (verifpass) {
              const { password, ...data2 }= admin._doc
             
-            console.log("mon nouveau admin",admin,"mon data2",data2)
+            console.log("mon nouveaus admin",admin,"mon data2",data2)
             
             // req.session.admin = data2
             // console.log("ma session est presente",req.session.admin);
@@ -106,14 +106,14 @@ const controlerAdmin = class {
     const recup = await otherUser.utilisarteuParID(id)
     if (recup) {
       message='recuperation bien effectuer'
-      console.log("marecuperation",recup);
+      console.log("ma recuperation",recup);
       res.json({recup,message})
     }else{
       message='recuperation echouer'
       console.log("mon message",message);
       res.json({message})
     }
-  console.log('ma recuperation hooo');
+  console.log('ma recuperation hooààào');
   }
 
 
