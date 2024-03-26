@@ -43,7 +43,7 @@ const Utulisateur = (props) => {
         
         <>
         <Hearder/>
-      <div  className="box">
+      <div  className="boxs">
         <div className="cards">
           <div className="hearder">
               <div className="texte"> <h5>Mes User</h5> </div>
