@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import "./loader.css";
-import "./loader";
 const Loader = (props) => {
+    useEffect(() => {
+        // Masquer le loader lorsque la page est entièrement chargée
+        window.onload = function() {
+            document.getElementById("loaderContainer").style.display = "none";
+        };
+    }, []);
     return (
         
         <div class="loader-container" id="loaderContainer">

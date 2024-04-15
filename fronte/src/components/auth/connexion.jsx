@@ -10,6 +10,7 @@ import { accountService } from "../../services/accountService";
 import Loader from "../public/loader";
 
 
+
 const Connexion = (props) => {
   const navigate= useNavigate()
   useEffect(() => {
@@ -86,8 +87,9 @@ const Connexion = (props) => {
   };
 
   return (
-    <div>
-      <Loader></Loader>
+    <>
+    <Loader></Loader>
+      
       <Container style={{ marginTop: "40px" }}>
         <Form onSubmit={envois}>
           <Row style={{ padding: "5px 20px", marginBottom: "25px" }}>
@@ -140,7 +142,7 @@ const Connexion = (props) => {
           </Row>
         </Form>
       </Container>
-    </div>
+    </>
   );
 };
 

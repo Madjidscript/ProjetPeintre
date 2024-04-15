@@ -22,7 +22,7 @@ const Home = (props) => {
     <>
     <Loader></Loader>
       <Container fluid className="hearder">
-        <video autoPlay muted loop className="fill-width">
+        <video autoPlay muted loop className="fill-width" >
           <source src={video1} type="video/mp4" />
         </video>
         <Hearder></Hearder>
