@@ -13,12 +13,14 @@ import image4 from "../../assets/image4.jpg";
 
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/public/Footer";
+import Loader from "../../components/public/loader";
 
 const Home = (props) => {
   let navigate = useNavigate();
 
   return (
     <>
+    <Loader></Loader>
       <Container fluid className="hearder">
         <video autoPlay muted loop className="fill-width">
           <source src={video1} type="video/mp4" />

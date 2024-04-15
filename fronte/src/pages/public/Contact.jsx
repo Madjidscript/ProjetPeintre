@@ -10,6 +10,7 @@ import "../public/css/contact.css";
 import image2 from "../../assets/image2.jpg";
 import { useState } from 'react';
 import axios from "../../services/collerService";
+import Loader from '../../components/public/loader';
 
 const Contact = (props) => {
     const [prenom,setPrenom]= useState("")
@@ -58,6 +59,7 @@ const Contact = (props) => {
     return (
         
         <>
+        <Loader/>
         <Hearder/>
         <Container style={{ marginTop: "40px" }}>
         <Row style={{ padding: "5px 20px" }}>

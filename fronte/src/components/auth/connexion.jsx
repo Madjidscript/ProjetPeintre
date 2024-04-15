@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../../services/collerService";
 import { useNavigate } from "react-router-dom";
 import { accountService } from "../../services/accountService";
+import Loader from "../public/loader";
 
 
 const Connexion = (props) => {
@@ -29,6 +30,7 @@ const Connexion = (props) => {
   // const [mesDonnes,setMesdonnes]=useState("")
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const envois = (e) => {
     e.preventDefault();
     console.log("password:", password);
@@ -45,9 +47,10 @@ const Connexion = (props) => {
     axios
       .post("/admin/connexion", data)
       .then((response) => {
-        console.log("Réponse de l'API :", response.data.data2);
+        console.log("Réponse de l'API :", response.data.data2,"monmessage", response.data.message);
         const info = response.data.data2;
         setdataApi(response.data.data2);
+        setMessage(response.data.message)
         if (info && info !== undefined) {
           const donner = JSON.stringify(response.data.data2);
           //const local = JSON.parse(localStorage.getItem('Mydata'))
@@ -84,11 +87,13 @@ const Connexion = (props) => {
 
   return (
     <div>
+      <Loader></Loader>
       <Container style={{ marginTop: "40px" }}>
         <Form onSubmit={envois}>
           <Row style={{ padding: "5px 20px", marginBottom: "25px" }}>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="email">
+              {message && <p>{message}</p>}
                 <Form.Label>
                   Email<sup>*</sup>
                 </Form.Label>

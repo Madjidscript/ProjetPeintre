@@ -8,6 +8,7 @@ import axios from "../../../services/collerService";
 import Hearder from '../../public/Hearder';
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import Loader from "../../public/loader";
 const Modif = (props) => {
     //const navigate = useNavigate();
   const {id}= useParams()
@@ -32,7 +33,7 @@ const handleChange = (e) => {
   setDatas({ ...data, [name]: value });
 };
 const handleImageChange = (e) => {
-  setData({ ...data, image: e.target.files[0] });
+  setDatas({ ...data, image: e.target.files[0] });
 };
 
 
@@ -43,6 +44,7 @@ const handleImageChange = (e) => {
     const [email, setEmail] = useState("");
     const [fonction,SetFonction] = useState("");
     const [image, setImage] = useState("");
+
     const envois = (e) => {
       e.preventDefault();
       console.log("Non:", data.nom);
@@ -72,13 +74,13 @@ const handleImageChange = (e) => {
       axios
         .post(`/admin/modif/${id}`,formdata)
         .then((response) => {
-          console.log("Réponse de l'API :", response);
+          console.log("Réponse de l'API :", response,"mon message",response.data.data);
   
           setTimeout(() => {
             console.log("Fonction exécutée après 3 secondes");
             //navigate("/auth/connexion");
             window.location.reload()
-          }, 3000);
+          }, 90000);
         })
         .catch((error) => {
           console.error("Erreur lors de la requête :", error);
@@ -90,7 +92,8 @@ const handleImageChange = (e) => {
 
     return (
       <div>
-          <Hearder/>
+        <Loader></Loader>
+        <Hearder/>
         <Container style={{ marginTop: "40px" }}>
           <Form onSubmit={envois}>
             <Row style={{ padding: "5px 20px", marginBottom: "25px" }}>

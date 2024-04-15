@@ -5,11 +5,13 @@ import Col from "react-bootstrap/esm/Col";
 import Button from "react-bootstrap/Button";
 import Hearder from "../../components/public/Hearder";
 import Footer from "../../components/public/Footer";
+import Loader from "../../components/public/loader";
 
 const Carrière = (props) => {
     return (
         
         <>
+        <Loader/>
         <Hearder/>
         <Container style={{marginTop:"40px"}}>
         <Row>

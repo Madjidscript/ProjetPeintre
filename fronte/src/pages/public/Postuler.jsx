@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
 import React, { useState } from "react";
 import axios from "../../services/collerService";
+import Loader from "../../components/public/loader";
 const Postuler = (props) => {
   const [prenom, setPrenom] = useState("");
   const [nom, setNom] = useState("");
@@ -62,6 +63,7 @@ const Postuler = (props) => {
   };
   return (
     <>
+    <Loader></Loader>
       <Container>
         <Row
           className="justify-content-between"

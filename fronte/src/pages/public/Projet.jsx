@@ -8,6 +8,7 @@ import  "../public/css/projet.css";
 import axios from "../../services/collerService";
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/public/Footer';
+import Loader from '../../components/public/loader';
 
 const Projet = (props) => {
     const domain = 'https://projetpeintre.onrender.com/'
@@ -38,6 +39,7 @@ const Projet = (props) => {
 
     return (
         <>
+        <Loader></Loader>
         <Hearder ></Hearder>
         <Container className="parent" >
             <Row>

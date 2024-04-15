@@ -5,6 +5,7 @@ import axios from "../../../services/collerService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit, faLock } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../../public/loader';
 
 
 const Utulisateur = (props) => {
@@ -42,6 +43,7 @@ const Utulisateur = (props) => {
     return (
         
         <>
+        <Loader></Loader>
         <Hearder/>
       <div  className="boxs">
         <div className="cards">

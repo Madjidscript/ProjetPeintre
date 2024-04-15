@@ -3,18 +3,19 @@ import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../../../services/collerService";
-import Hearder from '../../public/Hearder';
+import Hearder from "../../public/Hearder";
+import Loader from "../../public/loader";
 //import { useNavigate } from "react-router-dom";
 
 const InscriptionUser = (props) => {
   //const navigate = useNavigate();
-
+  const [message, setMessage] = useState("");
   const [password, setPassword] = useState("");
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
-  const [fonction,SetFonction] = useState("admin");
+  const [fonction, SetFonction] = useState("admin");
   const [image, setImage] = useState("");
   const envois = (e) => {
     e.preventDefault();
@@ -23,13 +24,13 @@ const InscriptionUser = (props) => {
     console.log("email:", email);
     console.log("fonction:", fonction);
     console.log("imae:", image);
-    
-    const formdata  = new FormData()
-    formdata.append("nom",nom)
-    formdata.append("email",email)
-    formdata.append("password",password)
-    formdata.append("fonction",fonction)
-    formdata.append("image",image)
+
+    const formdata = new FormData();
+    formdata.append("nom", nom);
+    formdata.append("email", email);
+    formdata.append("password", password);
+    formdata.append("fonction", fonction);
+    formdata.append("image", image);
 
     e.preventDefault();
     // let data = {
@@ -43,12 +44,19 @@ const InscriptionUser = (props) => {
     axios
       .post("/admin/inscription", formdata)
       .then((response) => {
-        console.log("Réponse de l'API :", response);
+        console.log(
+          "Réponse de l'API :",
+          response,
+          "mon message",
+          response.data
+        );
+
+        setMessage(response.data);
 
         setTimeout(() => {
           console.log("Fonction exécutée après 3 secondes");
           //navigate("/auth/connexion");
-          window.location.reload()
+          window.location.reload();
         }, 3000);
       })
       .catch((error) => {
@@ -57,12 +65,14 @@ const InscriptionUser = (props) => {
   };
   return (
     <div>
-        <Hearder/>
+      <Loader></Loader>
+      <Hearder />
       <Container style={{ marginTop: "40px" }}>
         <Form onSubmit={envois}>
           <Row style={{ padding: "5px 20px", marginBottom: "25px" }}>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="nom">
+                {message && <p>{message}</p>}
                 <Form.Label>
                   Nom<sup>*</sup>
                 </Form.Label>
@@ -119,10 +129,15 @@ const InscriptionUser = (props) => {
               </Form.Group>
             </Col>
             <Col xs={12}>
-            <Form.Group  className="mb-3" controlId="imageProjet">
-                 <Form.Label>Non du projet</Form.Label>
-                <Form.Control type="file" placeholder="entrer lenon du projet"  name="image" onChange={(e)=>setImage(e.target.files[0])}  ></Form.Control>
-            </Form.Group>
+              <Form.Group className="mb-3" controlId="imageProjet">
+                <Form.Label>Non du projet</Form.Label>
+                <Form.Control
+                  type="file"
+                  placeholder="entrer lenon du projet"
+                  name="image"
+                  onChange={(e) => setImage(e.target.files[0])}
+                ></Form.Control>
+              </Form.Group>
             </Col>
           </Row>
 

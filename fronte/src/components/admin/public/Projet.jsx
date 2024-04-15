@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/esm/Row';
 import axios from "../../../services/collerService";
 import { useNavigate } from 'react-router-dom';
 import Hearder from '../../public/Hearder';
+import Loader from '../../public/loader';
 
 const Projet = (props) => {
   const navigate= useNavigate()
@@ -59,6 +60,7 @@ const Projet = (props) => {
 
     return (
     <>
+    <Loader></Loader>
    <Hearder/>
   
   <Form onSubmit={envoi} enctype="multipart/form-data" >  

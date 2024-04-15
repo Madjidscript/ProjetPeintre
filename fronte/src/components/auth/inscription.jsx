@@ -6,6 +6,7 @@ import Button from "react-bootstrap/esm/Button";
 import React, { useEffect,useState } from "react";
 import axios from "../../services/collerService";
 import { useNavigate } from "react-router-dom";
+import Loader from "../public/loader";
 
 const Inscription = (props) => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Inscription = (props) => {
       navigate("/admin/projet");
     }
   }, []); 
-
+  const [message, setMessage] = useState("");
   const [password, setPassword] = useState("");
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
@@ -49,8 +50,8 @@ const Inscription = (props) => {
     axios
       .post("/admin/inscription", formdata)
       .then((response) => {
-        console.log("Réponse de l'API :", response);
-
+        console.log("Réponse de l'API :", response,"mon message", response.data);
+      setMessage(response.data)
         setTimeout(() => {
           console.log("Fonction exécutée après 3 secondes");
           navigate("/admin/connexion");
@@ -62,11 +63,13 @@ const Inscription = (props) => {
   };
   return (
     <div>
+      <Loader></Loader>
       <Container style={{ marginTop: "40px" }}>
         <Form onSubmit={envois}>
           <Row style={{ padding: "5px 20px", marginBottom: "25px" }}>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="nom">
+              {message && <p>{message}</p>}
                 <Form.Label>
                   Nom<sup>*</sup>
                 </Form.Label>

@@ -9,6 +9,7 @@ import Image from "react-bootstrap/Image";
 import  "../public/css/details1.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import Loader from '../../components/public/loader';
 
 
 const Detail1 = (props) => {
@@ -31,6 +32,7 @@ const Detail1 = (props) => {
     return (
         
         <>
+        <Loader></Loader>
           <Container>
             <Row className='box1'>
                 <Col xs={12} md={7} className='images'>
