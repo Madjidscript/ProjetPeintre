@@ -39,7 +39,7 @@ static inscription = async(utilisateur)=>{
 
 static suppression = async(id)=>{
     try {
-        const supp = await User.findByIdAndRemove(id)
+        const supp = await User.findByIdAndDelete(id)
         return supp
     } catch (error) {
         console.log("mon erreur",error);

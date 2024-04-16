@@ -63,7 +63,7 @@ const controlerAdmin = class {
       let message = ""
       const admin = await otherUser.utilisateurParEmail(mail)
       if (!admin) {
-        message="l'utilisateur n'existe pas"
+        message="email incorrect"
         res.json(message)
       }else{
         const verifpass = await bcrypt.compare(password,admin.password)
@@ -144,15 +144,31 @@ const controlerAdmin = class {
     
       let verifEMAIl = mailer2
       if (verifEMAIl) {
-        message="insertion valider"
+        message="modification valider"
         res.json(message)
       }
     
   }else{
       console.log('une erreur survenue');
-      message="insertion echouer"
+      message="modification echouer"
       res.json(message)
   }
+  }
+
+  static supp = async(req=request,res=response)=>{
+    const id =req.params.id
+    console.log("mon id",id);
+    let message =""
+    const sup = await otherUser.suppression(id)
+    if (sup) {
+      console.log("ma suppression")
+      message='suppression efectuer'
+      res.json(message)
+    } else {
+      message ="suppression dutilisateur echouer"
+      console.log('mon message',message);
+      res.json(message)
+    }
   }
 
 
