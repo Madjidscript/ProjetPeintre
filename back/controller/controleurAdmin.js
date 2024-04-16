@@ -125,7 +125,7 @@ const controlerAdmin = class {
     const ids = req.params.id
     const password = req.body.password
     const mail = req.body.email
-    const images = req.body.image
+    const images = req.file.path
     const fonctions = req.body.fonction
     const hashpass = await bcrypt.hash(password,10)
       let data={
@@ -135,6 +135,7 @@ const controlerAdmin = class {
           fonction:fonctions,
           image:images
       }
+      console.log("mon image des",data.image)
     const Modif= await otherUser.update(ids,data)
 
     if (Modif) {
