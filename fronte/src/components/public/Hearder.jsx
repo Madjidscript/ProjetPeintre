@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 function Hearder() {
   const [nom, setNom] = useState("");
+  const [id, setid] = useState("");
   const connecter = accountService.local();
   const navigate = useNavigate();
   const deconnexion = () => {
@@ -20,8 +21,9 @@ function Hearder() {
     const local = JSON.parse(localStorage.getItem("Mydata"));
     
     if (local) {
-      console.log("aslam hooo", local.nom);
+      console.log("aslam hooo", local.nom,"mon id hoo",local._id);
       setNom(local.nom);
+      setid(local._id)
     }
   }, []);
  
@@ -70,7 +72,7 @@ function Hearder() {
                 <Nav.Link className="lien" href="user">
                   user{" "}
                 </Nav.Link>
-                <Nav.Link className="lien" href="modif">
+                <Nav.Link className="lien" href="modif" id={id}>
                   editer{" "}
                 </Nav.Link>
                 <Nav.Link className="lien" href="#">

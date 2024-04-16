@@ -22,8 +22,10 @@ const Utulisateur = (props) => {
   const modif =(id)=>{
     navigate("/admin/modif/" +id)
   }
- 
-
+  const supp =(id)=>{
+    navigate("/admin/supp/" +id)
+  }
+  
   useEffect (()=>{
       axios.get('/admin/utilisateur')
       .then(res => {
@@ -77,12 +79,13 @@ const Utulisateur = (props) => {
       <td>{element.fonction}</td>
       <td class="actions">
         
-        <div>
+        <div onClick={()=>{supp(element._id)}}>
         <FontAwesomeIcon
         className="ms-auto"
         icon={faTrash}
         size="2x"
         color="red"
+        cursor="pointer"
       />
         </div>
        
@@ -92,6 +95,7 @@ const Utulisateur = (props) => {
         icon={faEdit}
         size="2x"
         color="blue"
+        cursor="pointer"
       />
         </div>
         
@@ -101,6 +105,7 @@ const Utulisateur = (props) => {
         icon={faLock}
         size="2x"
         color="yellow"
+        cursor="pointer"
       />
         </div>
       </td>
