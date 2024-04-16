@@ -72,7 +72,7 @@ function Hearder() {
                 <Nav.Link className="lien" href="user">
                   user{" "}
                 </Nav.Link>
-                <Nav.Link className="lien" href="modif" id={id}>
+                <Nav.Link className="lien" href={`/admin/modif/${id}`}>
                   editer{" "}
                 </Nav.Link>
                 <Nav.Link className="lien" href="#">
