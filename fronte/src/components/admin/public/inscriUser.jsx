@@ -14,6 +14,7 @@ const InscriptionUser = (props) => {
   const [message, setMessage] = useState("");
   const [password, setPassword] = useState("");
   const [nom, setNom] = useState("");
+  const [statut, setStatut] = useState("true");
   const [email, setEmail] = useState("");
   const [fonction, SetFonction] = useState("admin");
   const [image, setImage] = useState("");
@@ -24,6 +25,7 @@ const InscriptionUser = (props) => {
     console.log("email:", email);
     console.log("fonction:", fonction);
     console.log("imae:", image);
+    console.log("statut:", statut);
 
     const formdata = new FormData();
     formdata.append("nom", nom);
@@ -31,6 +33,7 @@ const InscriptionUser = (props) => {
     formdata.append("password", password);
     formdata.append("fonction", fonction);
     formdata.append("image", image);
+    formdata.append("statut", statut);
 
     e.preventDefault();
     // let data = {
@@ -130,12 +133,24 @@ const InscriptionUser = (props) => {
             </Col>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="imageProjet">
-                <Form.Label>Non du projet</Form.Label>
+                <Form.Label>Image</Form.Label>
                 <Form.Control
                   type="file"
                   placeholder="entrer lenon du projet"
                   name="image"
                   onChange={(e) => setImage(e.target.files[0])}
+                ></Form.Control>
+              </Form.Group>
+            </Col>
+            <Col xs={12}>
+              <Form.Group className="mb-3" controlId="statut">
+              
+                <Form.Control
+                  className="champ"
+                  type="hidden"
+                  value={statut}
+                  onChange={(e) => setStatut(e.target.value)}
+                  name="statut"
                 ></Form.Control>
               </Form.Group>
             </Col>

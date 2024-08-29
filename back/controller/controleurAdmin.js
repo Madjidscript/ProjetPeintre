@@ -27,11 +27,12 @@ const controlerAdmin = class {
    
     }
     static inscription= async (req=request,res=response)=>{
-      console.log('mon body',req.body);
+      console.log('mon body',req.body,"mon statut",req.body.statut);
       const password = req.body.password
       const mail = req.body.email
       const images = req.file.path
       const fonctions = req.body.fonction
+      const statuts = req.body.statut
       let message = ""
       const email = await otherUser.utilisateurParEmail(mail)
       if (email) {
@@ -44,7 +45,9 @@ const controlerAdmin = class {
             email:mail,
             password:hashpass,
             fonction:fonctions,
-            image:images
+            image:images,
+            statut:statuts
+            
         }
         const insertion =await otherUser.inscription(data)
         if (insertion) {

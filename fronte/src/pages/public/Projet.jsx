@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Hearder from '../../components/public/Hearder';
+import Hearder from '../../components/public/Hearder2';
 import Container from 'react-bootstrap/esm/Container';
 import Image from "react-bootstrap/Image";
 import Row from 'react-bootstrap/esm/Row';

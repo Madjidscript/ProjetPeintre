@@ -3,7 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Button from "react-bootstrap/Button";
-import Hearder from "../../components/public/Hearder";
+import Hearder from "../../components/public/Hearder2";
 import Footer from "../../components/public/Footer";
 import Loader from "../../components/public/loader";
 

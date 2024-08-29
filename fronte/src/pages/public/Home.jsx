@@ -4,7 +4,7 @@ import Col from "react-bootstrap/esm/Col";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import "./css/home.css";
-import Hearder from "../../components/public/Hearder";
+import Hearder from "../../components/public/Hearder2";
 import video1 from "../../assets/peintre1.mp4";
 import image1 from "../../assets/image1.jpg";
 import image2 from "../../assets/image2.jpg";

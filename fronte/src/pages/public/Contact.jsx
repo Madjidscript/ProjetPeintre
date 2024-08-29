@@ -1,5 +1,5 @@
 
-import Hearder from '../../components/public/Hearder';
+import Hearder from '../../components/public/Hearder2';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';

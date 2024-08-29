@@ -14,7 +14,7 @@ function Hearder() {
   const navigate = useNavigate();
   const deconnexion = () => {
     accountService.deconnexion();
-    navigate("/home");
+    navigate("/auth/connexion");
   };
 
   useEffect(() => {
@@ -29,6 +29,7 @@ function Hearder() {
  
 
   return (
+    <>
     <Navbar expand="lg" className="success">
       <Container className="m-auto=" id="box">
         <Navbar.Brand href="home" id="titre">
@@ -47,44 +48,31 @@ function Hearder() {
             navbarScroll
           >
            
-           
-              <>
+             
+                <Nav.Link className="lien" href="service">
+                  Service
+                </Nav.Link>
                 <Nav.Link className="lien" href="projet">
-                  Ajout projet{" "}
+                  Projet
                 </Nav.Link>
-                <Nav.Link className="lien" href="inscriUser">
-                  inscritUser{" "}
+                <Nav.Link className="lien" href="carriere">
+                  Carrière{" "}
                 </Nav.Link>
-                <Nav.Link className="lien" href="user">
-                  user{" "}
+                <Nav.Link className="lien" href="contact">
+                  Contact{" "}
                 </Nav.Link>
-                <Nav.Link className="lien" href={`/admin/modif/${id}`}>
-                  editer{" "}
-                </Nav.Link>
-                <Nav.Link className="lien" href="#">
-                  {nom}
-                </Nav.Link>
-                <Button
-                  variant="primary"
-                  onClick={deconnexion}
-                  style={{
-                    width: "120px",
-                    backgroundColor: "#fd5521",
-                    border: "none",
-                    padding: "5px",
-                    marginLeft: "25px",
-                  }}
-                >
-                  deconnexion
-                </Button>{" "}
-              </>
-            
-          </Nav>
-
+              
+          
+              </Nav>
          
+            <Navbar.Brand href="#" id="num">
+              01 53 53 50 65
+            </Navbar.Brand>
+        
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </>
   );
 }
 
