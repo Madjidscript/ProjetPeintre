@@ -45,7 +45,7 @@ const Utulisateur = (props) => {
     return (
         
         <>
-        <Loader></Loader>
+        
         <Hearder/>
       <div  className="boxs">
         <div className="cards">
