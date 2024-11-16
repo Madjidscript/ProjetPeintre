@@ -59,7 +59,7 @@ const Contact = (props) => {
     return (
         
         <>
-        <Loader/>
+       
         <Hearder/>
         <Container style={{ marginTop: "40px" }}>
         <Row style={{ padding: "5px 20px" }}>

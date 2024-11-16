@@ -38,8 +38,7 @@ const Projet = (props) => {
 
   return (
     <>
-      <Loader />
-      <Header />
+      
 
       <Form onSubmit={envoi} className='parent d-flex justify-content-center '>
         <Row className="w-75">

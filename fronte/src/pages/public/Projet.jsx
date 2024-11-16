@@ -39,7 +39,7 @@ const Projet = (props) => {
 
     return (
         <>
-        <Loader></Loader>
+        
         <Hearder ></Hearder>
         <Container className="parent" >
             <Row>

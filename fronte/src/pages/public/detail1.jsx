@@ -32,7 +32,7 @@ const Detail1 = (props) => {
     return (
         
         <>
-        <Loader></Loader>
+       
           <Container>
             <Row className='box1'>
                 <Col xs={12} md={7} className='images'>

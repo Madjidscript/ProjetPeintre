@@ -11,7 +11,7 @@ const Carrière = (props) => {
     return (
         
         <>
-        <Loader/>
+        
         <Hearder/>
         <Container style={{marginTop:"40px"}}>
         <Row>

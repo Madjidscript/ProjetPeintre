@@ -92,7 +92,7 @@ const handleImageChange = (e) => {
 
     return (
       <div>
-        <Loader></Loader>
+        
         <Hearder/>
         <Container style={{ marginTop: "40px" }}>
           <Form onSubmit={envois}>
