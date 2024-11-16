@@ -12,7 +12,7 @@ const AdminRouter = (props) => {
     return (
         <>
         <Routes>
-            <Route index element={<Projet/>}/>
+            <Route index element={<Utulisateur/>}/>
             <Route path='projet' element={<Projet/>}/>
             <Route path='inscriUser' element={<InscriptionUser/>}/>
             <Route path='user' element={<Utulisateur/>}/>
