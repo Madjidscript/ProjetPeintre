@@ -6,8 +6,9 @@ import Row from 'react-bootstrap/Row';
 import "../../../pages/public/css/ajoutprojet.css";
 import axios from "../../../services/collerService";
 import { useNavigate } from 'react-router-dom';
-import Header from '../../public/Hearder'; // Correction du nom d'import si nécessaire
 import Loader from '../../public/loader';
+import Hearder from '../../public/Hearder';
+
 
 const Projet = (props) => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const Projet = (props) => {
 
   return (
     <>
-      
+       <Hearder/>
 
       <Form onSubmit={envoi} className='parent d-flex justify-content-center '>
         <Row className="w-75">
