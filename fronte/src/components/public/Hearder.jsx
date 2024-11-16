@@ -49,20 +49,20 @@ function Hearder() {
            
            
               <>
-                <Nav.Link className="lien" href="projet">
+                <Nav.Link className="lien" href="/admin/projet">
                   Ajout projet{" "}
                 </Nav.Link>
-                <Nav.Link className="lien" href="inscriUser">
+                <Nav.Link className="lien" href="/admin/inscriUser">
                   inscritUser{" "}
                 </Nav.Link>
-                <Nav.Link className="lien" href="user">
+                <Nav.Link className="lien" href="/admin/user">
                   user{" "}
                 </Nav.Link>
                 <Nav.Link className="lien" href={`/admin/modif/${id}`}>
                   editer{" "}
                 </Nav.Link>
                 <Nav.Link className="lien" href="#">
-                  {nom}
+                 administrateur: {nom}
                 </Nav.Link>
                 <Button
                   variant="primary"
