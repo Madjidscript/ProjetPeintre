@@ -88,7 +88,7 @@ const Connexion = (props) => {
 
   return (
     <>
-    <Loader></Loader>
+    
       
       <Container style={{ marginTop: "40px" }}>
         <Form onSubmit={envois}>

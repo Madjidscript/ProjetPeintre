@@ -63,7 +63,7 @@ const Inscription = (props) => {
   };
   return (
     <div>
-      <Loader></Loader>
+     
       <Container style={{ marginTop: "40px" }}>
         <Form onSubmit={envois}>
           <Row style={{ padding: "5px 20px", marginBottom: "25px" }}>
